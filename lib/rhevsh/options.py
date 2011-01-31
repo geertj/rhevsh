@@ -12,13 +12,10 @@ from optparse import OptionParser, HelpFormatter
 
 class RhevshOptionParser(OptionParser):
 
-    usage='%prog [options]\n%prog [options] command...'
+    usage='%prog [options]\n       %prog [options] command...'
     description = textwrap.dedent("""\
         This program is a command-line interface to Red Hat Enterprise
         Virtualization.
-
-        Use 'rhevsh --help' to show help on command-line options.
-        Use 'rhevsh --help-commands' for help on commands.
         """)
 
     def __init__(self):
