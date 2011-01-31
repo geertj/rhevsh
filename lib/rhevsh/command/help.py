@@ -79,6 +79,14 @@ class HelpCommand(RhevCommand):
         customize the way in which rhevsh operations. Type 'show' to see a
         list of all configuration variables and their current values.
 
+        == Environment Variables ==
+
+        The following environment variables are recognized:
+
+          * RHEV_URL        - The URL to connect to, same as --url.
+          * RHEV_USERNAME   - The username, same as --username
+          * RHEV_PASSWORD   - The password, same as --password.
+
         == Examples ==
 
         This example lists all vms, and stores the output in a file 'vms.txt':
