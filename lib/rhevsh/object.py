@@ -9,7 +9,7 @@
 
 def create(cls, *args, **kwargs):
     """Create rhevsh objects."""
-    from rhevsh.format import *
+    from rhevsh.format import Formatter, get_formatter
     if issubclass(cls, Formatter):
         format = args[0]
         cls = get_formatter(format)
