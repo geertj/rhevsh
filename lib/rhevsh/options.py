@@ -6,39 +6,30 @@
 # rhevsh is copyright (c) 2011 by the rhevsh authors. See the file
 # "AUTHORS" for a complete overview.
 
+import textwrap
 from optparse import OptionParser, HelpFormatter
-
-
-class RhevshHelpFormatter(HelpFormatter):
-    """Help formatter that does not try to reformat multi-line strings."""
-
-    def __init__(self):
-        HelpFormatter.__init__(self, indent_increment=0,
-                   max_help_position=24, width=None, short_first=0)
-
-    def format_description(self, description):
-        return description
-
-    def format_usage(self, usage):
-        return 'Usage: %s\n' % usage
- 
-    def format_heading(self, heading):
-        return '%s\n' % heading
 
 
 class RhevshOptionParser(OptionParser):
 
-    usage='%prog [options]'
-    description = 'foo'
+    usage='%prog [options]\n%prog [options] command...'
+    description = textwrap.dedent("""\
+        This program is a command-line interface to Red Hat Enterprise
+        Virtualization.
+
+        Use 'rhevsh --help' to show help on command-line options.
+        Use 'rhevsh --help-commands' for help on commands.
+        """)
 
     def __init__(self):
-        formatter = RhevshHelpFormatter()
-        OptionParser.__init__(self, formatter=formatter, usage=self.usage,
+        OptionParser.__init__(self, usage=self.usage,
                               description=self.description)
         self.add_option('-d', '--debug', action='store_true',
                         help='enable debugging')
         self.add_option('-v', '--verbose', action='store_true',
                         help='be more verbose')
+        self.add_option('-H', '--help-commands', action='store_true',
+                        help='show help on commands')
         self.add_option('-U', '--url',
                         help='specifies the API entry point URL')
         self.add_option('-u', '--username', help='connect as this user')

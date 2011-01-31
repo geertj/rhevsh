@@ -58,6 +58,9 @@ def main():
     if not copy_cmdline_options(opts, context, parser):
         sys.exit(1)
 
+    if opts.help_commands:
+        args = ['help']
+
     if opts.filter:
         try:
             sys.stdin = file(opts.filter)
