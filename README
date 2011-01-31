@@ -1,0 +1,6 @@
+This is a command-line interface for Red Hat Enterprise Virtualization.
+
+See:
+
+ $ rhevsh --help
+ $ rhevsh
