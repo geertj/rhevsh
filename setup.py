@@ -20,7 +20,7 @@ version_info = {
                    ' Virtualization',
     'author': 'Geert Jansen',
     'author_email': 'gjansen@redhat.com',
-    'url': 'http://bitbucket.org/geertj/rhevsh',
+    'url': 'https://github.com/geertj/rhevsh',
     'license': 'MIT',
     'classifiers': [
         'Development Status :: 3 - Alpha',
